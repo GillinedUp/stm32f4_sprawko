@@ -35,7 +35,7 @@ W ramach projektu na Systemy Wbudowane postanowiliśmy zrealizować odtwarzacz m
 Oprogramowanie naszego odtwarzacza jest uruchamiane na systemie operacyjnym czasu rzeczywistego \textit{FreeRTOS}.
 
 \section{STM CubeMX}
-Pracę zaczęliśmy od wygenerowania projektu w programie \emph{STM CubeMX}. Progam ten służy do generowania kodu startowego projektu, uwzględniającego wykorzystywane peryferia, biblioteki (np. \textit{FatFS}) i interfejsy.
+Pracę zaczęliśmy od wygenerowania projektu w programie \emph{STM CubeMX}. Program ten służy do generowania kodu startowego projektu, uwzględniającego wykorzystywane peryferia, biblioteki (np. \textit{FatFS}) i interfejsy.
 
 Konfiguracja naszego projektu wygląda następująco:
 
@@ -78,8 +78,8 @@ Do rozwijania naszego projektu wykorzystywaliśmy środowisko \emph{GNU MCU Ecli
  \label{img6}
 \end{figure}
 
-\section{Procedura debuggowania}
-Płytkę STM32F4 Discovery podłączaliśmy do komputera za pomocą USB. Urządzenie było widoczne między innymi jako emulowany port szeregowy COM, co umożliwiało debuggowanie przy użyciu programu \emph{ExtraPUTTY}. Wyświetlał on komunikaty, które umieszczaliśmy w kodzie programu przy pomocy funkcji \texttt{printf()}. Aby mogła ona działać, zaimplementowaliśmy poniższe funkcje:
+\section{Procedura debugowania}
+Płytkę STM32F4 Discovery podłączaliśmy do komputera za pomocą USB. Urządzenie było widoczne między innymi jako emulowany port szeregowy COM, co umożliwiało debugowanie przy użyciu programu \emph{ExtraPUTTY}. Wyświetlał on komunikaty, które umieszczaliśmy w kodzie programu przy pomocy funkcji \texttt{printf()}. Aby mogła ona działać, zaimplementowaliśmy poniższe funkcje:
 
 \begin{lstlisting}
 /* For printf */
