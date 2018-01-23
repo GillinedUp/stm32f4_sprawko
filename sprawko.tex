@@ -30,7 +30,7 @@ language = C
 \title{Systemy Wbudowane \\Odtwarzacz plików dźwiękowych na STM32F407\\Sprawozdanie}
 \begin{document}
   \maketitle
-W ramach projektu na Systemy Wbudowane postanowiliśmy zrealizować odtwarzacz muzyczny na płytce  \emph{STM32F4 Discovery}. Pierwotna wersja projektu miała za zadanie odtwarzanie plików \emph{WAVE}, po czym zamierzaliśmy rozbudować projekt tak, by obsługiwał pliki \emph{MP3}.
+W ramach zadania inżynierskiego na Systemy Wbudowane postanowiliśmy zrealizować odtwarzacz muzyczny na płytce  \emph{STM32F4 Discovery}. Pierwotna wersja zadania miała za zadanie odtwarzanie plików \emph{WAVE}, po czym zamierzaliśmy rozbudować go tak, by obsługiwał pliki \emph{MP3}.
 
 Oprogramowanie naszego odtwarzacza jest uruchamiane na systemie operacyjnym czasu rzeczywistego \textit{FreeRTOS}.
 
@@ -70,7 +70,7 @@ Konfiguracja naszego projektu wygląda następująco:
 \end{figure}
 
 \section{Środowisko programistyczne}
-Do rozwijania naszego projektu wykorzystywaliśmy środowisko \emph{GNU MCU Eclipse}. Wymagało ono wstępnej konfiguracji -- ustawienie ścieżek do kompilatora, debuggera oraz modyfikacji pliku \texttt{Makefile}.
+Do rozwijania naszego zadania wykorzystywaliśmy środowisko \emph{GNU MCU Eclipse}. Wymagało ono wstępnej konfiguracji -- ustawienie ścieżek do kompilatora, debuggera oraz modyfikacji pliku \texttt{Makefile}.
 
 \begin{figure}[H]
  \centerline{\includegraphics[width=\textwidth]{img/img6}}
@@ -102,8 +102,8 @@ ssize_t _write_r(struct _reent *r, int fd, const void *ptr, size_t len) {
 
 \section{\emph{Wave Player} -- przegląd kodu}
 
-\subsection{Założenia projektu}
-Ta wersja projektu ma za zadanie odtwarzanie pliku \emph{WAVE} o danej nazwie z podłączonej do płytki przez USB pamięci flash. Kolejne kroki wykonywane przez program to:
+\subsection{Założenia zadania}
+Ta wersja zadania inżynierskiego ma odwarzać plik \emph{WAVE} o danej nazwie z podłączonej do płytki przez USB pamięci flash. Kolejne kroki wykonywane przez program to:
 \begin{itemize}
  \item montowanie systemu plików,
  \item otwieranie pliku muzycznego,
