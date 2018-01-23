@@ -30,7 +30,7 @@ language = C
 \title{Systemy Wbudowane \\Odtwarzacz plików dźwiękowych na STM32F407\\Sprawozdanie}
 \begin{document}
   \maketitle
-W ramach projektu na Systemy Wbudowane postanowiliśmy zrealizować odtwarzacz muzyczny na płytce  STM32F4 Discovery. Pierwotna wersja projektu miała za zadanie odtwarzanie plików WAVE, po czym zamierzaliśmy rozbudować projekt tak, by obsługiwał pliki MP3.
+W ramach projektu na Systemy Wbudowane postanowiliśmy zrealizować odtwarzacz muzyczny na płytce  \emph{STM32F4 Discovery}. Pierwotna wersja projektu miała za zadanie odtwarzanie plików \emph{WAVE}, po czym zamierzaliśmy rozbudować projekt tak, by obsługiwał pliki \emph{MP3}.
 
 Oprogramowanie naszego odtwarzacza jest uruchamiane na systemie operacyjnym czasu rzeczywistego \textit{FreeRTOS}.
 
@@ -226,24 +226,24 @@ void WavePlayBack(uint32_t AudioFreq) {
 }
 \end{lstlisting}
 
-W tej funkcji najpierw inicjalizujemy kodek, DMA oraz I2C. Następnie wczytujemy pierwszą porcję danych audio do bufora i odtwarzamy ją funkcją \texttt{BSP\_AUDIO\_OUT\_Play()}. Dopóki nie~odtworzymy całego utworu, w miarę potrzeb doczytujemy porcje pliku do bufora.
+W funkcji \texttt{WavePlayBack(uint32\_t AudioFreq)} najpierw inicjalizujemy kodek, \emph{DMA} oraz \emph{I2C}. Następnie wczytujemy pierwszą porcję danych audio do bufora i odtwarzamy ją funkcją \texttt{BSP\_AUDIO\_OUT\_Play()}. Dopóki nie~odtworzymy całego utworu, w miarę potrzeb doczytujemy porcje pliku do bufora.
 
 Po skończonym odtwarzaniu, zamykamy plik.
 
 \section{\emph{MP3 Player}}
 
-Gdy skończyliśmy pracę nad odtwarzaniem plików \texttt{WAVE}, zaczęliśmy rozszerzać funkcjonalność naszego programu o możliwość odtwarzania plików \texttt{MP3}.
+Gdy skończyliśmy pracę nad odtwarzaczem plików \emph{WAVE}, zaczęliśmy rozszerzać funkcjonalność naszego programu o możliwość odtwarzania plików \emph{MP3}.
 
 Zadanie to miało zostać zrealizowane w następny sposób:
 \begin{itemize}
- \item dekodowanie kolejnych ramek pliku \texttt{MP3} przy pomocy biblioteki \texttt{Helix} do formatu takiego jak w pliku \texttt{WAVE},
- \item odtwarzanie otrzymanych fragmentów za pomocą już istniejącej funkcjonalności odtwarzania plików \texttt{WAVE}.
+ \item dekodowanie kolejnych ramek pliku \emph{MP3} przy pomocy biblioteki \texttt{Helix} do formatu takiego jak w pliku \emph{WAVE},
+ \item odtwarzanie otrzymanych fragmentów za pomocą już istniejącej funkcjonalności odtwarzania plików \emph{WAVE}.
 \end{itemize}
 
 Kod biblioteki \texttt{Helix} dołączyliśmy do naszego projektu i skonfigurowaliśmy jego kompilację razem z projektem.
 
 Dekodowanie ramek \texttt{MP3} odbywa się w funkcji \texttt{int MP3Decode(HMP3Decoder hMP3Decoder, unsigned char **inbuf, int *bytesLeft, short *outbuf, int useSize)}. Dekodowane \\ dane są zwracane przez zmienną \texttt{outbuf}.
 
-Projektu nie udało nam się ukończyć. W trakcie prac poznaliśmy złożony proces dekodowania i odtwarzania plików \texttt{MP3} o zmiennej długości ramki, którego nie udało nam się zaimplementować.
+Projektu nie udało nam się ukończyć. W trakcie prac poznaliśmy złożony proces dekodowania i odtwarzania plików \emph{MP3} o zmiennej długości ramki, którego nie udało nam się w pełni zaimplementować.
 
 \end{document}
